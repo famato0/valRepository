@@ -5,7 +5,7 @@ import LovePage from './pages/LovePage';
 
 function App() {
   return (
-    <Router basename='/valRepository'>
+    <Router basename='/valRepository/'>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/love-page" element={<LovePage />} />

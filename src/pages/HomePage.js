@@ -7,41 +7,37 @@ import cat2 from '../assets/cat2.gif';
 const HomePage = () => {
   const navigate = useNavigate();
   const [catImage, setCatImage] = useState(cat1);
-  const [headerText, setHeaderText] = useState("Vuoi passare San Valentino insieme? ❤️");
+  const [headerText, setHeaderText] = useState("Will you be my Valentine? ❤️");
+  const [yesButtonSize, setYesButtonSize] = useState(1); // Stato per la dimensione del pulsante "Si"
 
   const handleYesClick = () => {
     navigate('/love-page');
   };
 
-  const handleNoHover = (event) => {
-    const button = event.target;
-    const maxX = window.innerWidth - button.clientWidth - 20;
-    const maxY = window.innerHeight - button.clientHeight - 20;
+  const handleNoClick = () => {
+    // Incrementa la dimensione del pulsante "Si" ogni volta che "No" viene cliccato
+    setYesButtonSize(prevSize => prevSize + 0.2);
 
-    const newX = Math.random() * maxX;
-    const newY = Math.random() * maxY;
-
-    button.style.position = "absolute";
-    button.style.left = `${newX}px`;
-    button.style.top = `${newY}px`;
-
-    // Cambia l'immagine e il testo quando il pulsante "No" viene hoverato
-    setTimeout(() => {
-        setCatImage(cat2);
-        setHeaderText("e daiiiiiiiiiiiii? 😢");
-      }, 50);
-    
+    // Cambia l'immagine e il testo quando il pulsante "No" viene cliccato
+    setCatImage(cat2);
+    setHeaderText("e daiiiiiiiiiiiii 😢");
   };
 
   return (
     <div className="home-container">
-      <h2>{headerText}</h2> {/* Usa lo stato per il testo */}
-      <img src={catImage} alt="Funny Valentine" className="funny-gif" /> {/* Usa lo stato per la sorgente dell'immagine */}
+      <h2>{headerText}</h2>
+      <img src={catImage} alt="Funny Valentine" className="funny-gif" />
       <div className="buttons">
-        <button className="yes-button" onClick={handleYesClick}>Si</button>
+        <button
+          className="yes-button"
+          onClick={handleYesClick}
+          style={{ transform: `scale(${yesButtonSize})` }} // Applica la scala al pulsante "Si"
+        >
+          Si
+        </button>
         <button
           className="no-button"
-          onMouseEnter={handleNoHover}
+          onClick={handleNoClick} // Rimuovi l'evento onMouseEnter e aggiungi onClick
         >
           No
         </button>

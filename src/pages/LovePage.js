@@ -1,6 +1,6 @@
 import React from 'react';
 import TogetherTimer from '../components/CountdownTimer';
-import '../App.css';
+import './LovePage.css';
 import videoVostro from '../assets/IMG_4115.mp4';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ function LovePage() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Buon San Valentino! ❤️</h1>
+        <h1>Happy valentine's day ❤️</h1>
 
         <video className="video" autoPlay loop muted playsInline>
           <source src={videoVostro} type="video/mp4" />
@@ -22,7 +22,7 @@ function LovePage() {
           <TogetherTimer startDate={startDate} />
         </div>
 
-        <p>Ti amo tanto! ❤️</p>
+        <p>Love you ❤️</p>
 
         <button className="back-button" onClick={() => navigate('/')}>
           BACK

@@ -1,4 +1,0 @@
-body, html {
-    overflow: hidden; /* Disabilita lo scroll */
-    touch-action: none; /* Disabilita il pan e lo zoom sui dispositivi touch */
-  }

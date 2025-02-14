@@ -78,7 +78,6 @@ p {
   .App-header {
     padding: 10px;
     max-width: 80%;
-    padding-top: 15%;
   }
 
   h1 {
@@ -98,3 +97,19 @@ p {
     font-size: 0.7rem;
   }
 }  
+
+.media-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.media-slider {
+  display: flex;
+  width: 100%;
+}
+
+.media-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}

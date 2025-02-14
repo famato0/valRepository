@@ -108,3 +108,12 @@
       font-size: 14px; /* Riduci ulteriormente la dimensione del font */
     }
   }
+
+  .yes-button {
+    transition: transform 0.3s ease; /* Aggiungi una transizione fluida */
+  }
+
+  body, html {
+    overflow: hidden; /* Disabilita lo scroll */
+    touch-action: none; /* Disabilita il pan e lo zoom sui dispositivi touch */
+  }
